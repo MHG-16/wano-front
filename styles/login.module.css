@@ -1,0 +1,322 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,700");
+.containerLogin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: "Raleway", sans-serif;
+  color: #030303;
+}
+
+.containerLogin .screen {
+  margin-top: 5px;
+  background: linear-gradient(90deg, #fff, #5c58b8);
+  position: relative;
+  height: 600px;
+  width: 360px;
+  box-shadow: 0px 0px 24px #5c5696;
+}
+
+.containerLogin .screen .formContent {
+  z-index: 1;
+  position: relative;
+  height: 100%;
+}
+
+.containerLogin .screen .formContent .HomeButtonContainer {
+  margin-top: 2rem;
+  margin-left: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.containerLogin .screen .formContent .HomeButtonContainer :hover {
+  color: #5c58b8;
+}
+
+.containerLogin .screen .formContent .HomeButtonContainer a .iconHome {
+  font-weight: bold;
+}
+
+.containerLogin .screen .formContent .HomeButtonContainer a label {
+  margin-left: 0.25rem;
+  cursor: pointer;
+}
+
+.containerLogin .screen .formContent .footerLogin {
+  margin-top: 1.5rem;
+  margin-left: 0.5rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.containerLogin .screen .formContent .forgetTxt {
+  font-size: large;
+}
+
+.containerLogin .screen .formContent .forgetTxt .forgetLien {
+  color: #4c489d;
+  font-size: 1.1em;
+}
+
+.containerLogin .screen .formContent .footerLogin {
+  float: right;
+  position: relative;
+  bottom: 4rem;
+}
+
+.containerLogin .screen .formContent .footerLogin .socialMedia {
+  margin-right: 2rem;
+  color: #f3f3f3;
+  display: block;
+  float: right;
+}
+
+.containerLogin
+  .screen
+  .formContent
+  .footerLogin
+  .socialMedia
+  .socialMediaIcons
+  .iconMedia {
+  margin-right: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.containerLogin
+  .screen
+  .formContent
+  .footerLogin
+  .socialMedia
+  .socialMediaIcons
+  .iconMedia:hover {
+  color: #232323;
+  transform: scale(1.2);
+  transition: all 0.4s ease-in-out;
+}
+
+.containerLogin .screen .formContent .login {
+  width: inherit;
+  padding: 75px 0px 0px 20px;
+}
+
+.textCreate {
+  padding-top: 50px;
+}
+
+.containerLogin .screen .formContent .login .FormField {
+  padding: 20px 0px;
+  position: relative;
+  font-size: large;
+}
+
+.containerLogin .screen .formContent .login .FormField .iconInput {
+  position: absolute;
+  top: 30px;
+  color: #7875b5;
+}
+
+.containerLogin .screen .formContent .login .FormField .input {
+  border: none;
+  border-bottom: 2px solid #d1d1d4;
+  background: none;
+  padding: 10px;
+  padding-left: 24px;
+  font-weight: 700;
+  width: 50%;
+  transition: 0.2s;
+  outline: none;
+  cursor: pointer;
+  color: #030303;
+}
+
+.EyeIcon {
+  position: absolute;
+  top: 30px;
+  right: 52%;
+  color: #7875b5;
+  cursor: pointer;
+}
+
+.containerLogin .screen .formContent .login .FormField .input:hover,
+.containerLogin .screen .formContent .login .FormField .input:active,
+.containerLogin .screen .formContent .login .FormField .input:focus {
+  border-bottom-color: #5c5696;
+}
+
+.containerLogin .screen .formContent .login .buttonSubmit {
+  margin-top: 1.3rem;
+  width: 50%;
+}
+
+.containerLogin .screen .formContent .login .buttonSubmit .btnSubmit {
+  padding: 15px;
+  width: 100%;
+  text-align: center;
+  background-color: #f3f3f3;
+  border: #232323 solid 1px;
+  border-radius: 2rem;
+  font-size: larger;
+  font-weight: 700;
+  color: #4c489d;
+  box-shadow: 0px 2px 2px #5c5696;
+  cursor: pointer;
+}
+
+.containerLogin .screen .formContent .login .buttonSubmit .btnSubmit:hover {
+  width: 100%;
+  background-color: #4c489d;
+  color: #f3f3f3;
+  transform: translateX(5%);
+  transition: all 0.4s ease-in-out;
+}
+
+.containerLogin
+  .screen
+  .formContent
+  .login
+  .buttonSubmit
+  .btnSubmit
+  .btnSubIcon {
+  margin-left: 5rem;
+  font-size: larger;
+}
+
+.screen__background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  -webkit-clip-path: inset(0 0 0 0);
+  clip-path: inset(0 0 0 0);
+}
+
+.screen__background__shape {
+  transform: rotate(45deg);
+  position: absolute;
+}
+
+.screen__background__shape1 {
+  height: 100%;
+  width: 100%;
+  background: #fff;
+  top: -50px;
+  right: 40%;
+  border-radius: 0 72px 0 0;
+}
+
+.screen__background__shape2 {
+  height: 220px;
+  width: 220px;
+  background: #6c63ac;
+  top: -172px;
+  right: 0;
+  border-radius: 32px;
+}
+
+.screen__background__shape3 {
+  height: 540px;
+  width: 190px;
+  background: linear-gradient(90deg, #232323, #5c58b8);
+  top: -24px;
+  right: 0;
+  border-radius: 32px;
+}
+
+.screen__background__shape4 {
+  height: 400px;
+  width: 200px;
+  background: #7e7bb9;
+  top: 420px;
+  right: 50px;
+  border-radius: 60px;
+}
+
+@media screen and (max-width: 1000px) {
+  .containerLogin
+    .screen
+    .formContent
+    .login
+    .buttonSubmit
+    .btnSubmit
+    .btnSubIcon {
+    margin-left: 1rem;
+  }
+  .containerLogin
+    .screen
+    .formContent
+    .footerLogin
+    .socialMedia
+    .socialMediaIcons
+    .iconMedia {
+    font-size: 1rem;
+    margin-right: 0.3rem;
+  }
+}
+@media screen and (min-width: 720px) {
+  .containerLogin .screen {
+    width: 50%;
+  }
+  .containerLogin .screen .formContent .login .FormField .input {
+    font-size: large;
+  }
+  .containerLogin
+    .screen
+    .containerLogin
+    .screen
+    .formContent
+    .footerLogin
+    .socialMedia
+    .socialMediaIcons
+    .iconMedia {
+    font-size: 1.2rem;
+  }
+}
+@media screen and (max-width: 390px) {
+  .containerLogin {
+    width: 100%;
+  }
+  .containerLogin .screen {
+    margin-right: 10px;
+    margin-left: 10px;
+    width: 100%;
+  }
+  .containerLogin
+    .screen
+    .formContent
+    .footerLogin
+    .socialMedia
+    .socialMediaIcons
+    .iconMedia {
+    margin-right: 0.3rem;
+    font-size: 1rem;
+  }
+  .containerLogin .screen .formContent .footerLogin .socialMedia {
+    margin-right: 1rem;
+  }
+}
+@media screen and (max-width: 550px) {
+  .containerLogin .screen {
+    margin-right: 10px;
+    margin-left: 10px;
+    width: 90%;
+  }
+  .containerLogin
+    .screen
+    .formContent
+    .footerLogin
+    .socialMedia
+    .socialMediaIcons
+    .iconMedia {
+    margin-right: 0.3rem;
+    font-size: 1rem;
+  }
+  .containerLogin .screen .formContent .footerLogin .socialMedia {
+    margin-right: 1rem;
+  }
+}
+/*# sourceMappingURL=login.css.map */ /*# sourceMappingURL=login.css.map */

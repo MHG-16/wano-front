@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+
+.logo {
+  display: flex;
+  margin: 2rem 0 0 2rem;
+  text-shadow: 3px 2px 4px #666;
+  cursor: pointer;
+  outline: none;
+}
+.logo .leftPartie {
+  text-align: center;
+  width: 50px;
+  height: 50px;
+  background-color: azure;
+  color: #0da1f7;
+  font-family: "Lobster", cursive;
+  font-weight: 700;
+  font-size: xx-large;
+  border: 2.5px solid #0da1f7;
+}
+.logo .rightPartie {
+  height: 50px;
+  padding-right: 5px;
+  text-align: center;
+  padding-left: 5px;
+  background-color: #0da1f7;
+  color: azure;
+  font-family: "Lobster", cursive;
+  font-weight: 700;
+  font-size: xx-large;
+}
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 120px;
+  width: 100%;
+  z-index: 10;
+  background: rgba(15, 52, 96, 0.95);
+  display: flex;
+}
+.header nav {
+  margin-left: 0;
+  padding-top: 45px;
+  width: 100%;
+  font-size: large;
+  font-weight: bold;
+}
+.header nav .myLinks {
+  display: flex;
+  justify-content: space-around;
+}
+.header nav .myLinks a {
+  margin-left: 10%;
+  text-decoration: none;
+  color: #bebebe;
+  justify-content: space-around;
+}
+.header nav .myLinks a:hover {
+  color: white;
+  text-shadow: 1px 1px #bebebe;
+}
+.header nav div .active {
+  color: #e94560;
+}
+
+#icon-hamburger {
+  display: none;
+  position: absolute;
+  top: 40px;
+  right: 10px;
+  color: azure;
+  font-size: xx-large;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+  #icon-hamburger {
+    display: block;
+    cursor: pointer;
+  }
+  #myLinks {
+    display: none;
+    width: 100%;
+    height: 100%;
+  }
+}
+.navBar {
+  display: none;
+  position: absolute;
+  top: 120px;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(255, 255, 255, 0.75);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  width: 50%;
+  height: 100%;
+}
+.navBar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.navBar ul li {
+  margin-top: 30px;
+}
+.navBar a {
+  margin: 0px 0 0 10px;
+  text-decoration: none;
+  color: #030303;
+  justify-content: space-around;
+}
+.navBar a:hover {
+  color: white;
+}
+
+.btn-menu {
+  color: white;
+  position: absolute;
+  right: 10px;
+  top: 14px;
+  background-color: #31afb4;
+  padding: 15px;
+  border-radius: 0.7rem;
+  font-weight: bolder;
+  font-size: larger;
+}
+.btn-menu .icon-menu {
+  margin-left: 10px;
+} /*# sourceMappingURL=header.css.map */
