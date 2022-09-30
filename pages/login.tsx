@@ -16,15 +16,19 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { useForm } from "react-hook-form";
 import Link from "next/link";
-import axios from "axios";
 
 import styles from "../styles/login.module.css";
-import Home from "./index";
-import { useState } from "react";
+import { useRouter } from "next/router";
+import { selectAuthState, setAuthState } from "../store/authSlice";
+import { wrapper } from "../store/store";
+import { onSubmitLogin } from "../service/login";
+import { useDispatch, useSelector } from "react-redux";
 
 function Login() {
+  const router = useRouter();
+  const authState = useSelector(selectAuthState);
+  const dispatch = useDispatch();
   const { register, handleSubmit } = useForm();
-  const [isLogin, setLogin] = useState(false);
   const showPassword = () => {
     const inputPassword = document.getElementById(
       "password"
@@ -35,27 +39,11 @@ function Login() {
       inputPassword.type = "password";
     }
   };
-  const onSubmit = async (data) => {
-    const userName = data.email;
-    const password = data.password;
-    const token = Buffer.from(`${userName}:${password}`, "utf-8").toString(
-      "base64"
-    );
-    await axios
-      .post("http://localhost:5000/login", data, {
-        headers: {
-          Authorization: `Basic ${token}`,
-        },
-      })
-      .then((response) => {
-        sessionStorage.setItem("idSession", response.data.message.access_token);
-        setLogin(true);
-      })
-      .finally(() => console.log(sessionStorage.getItem("idSession")));
-  };
-  return isLogin ? (
-    <Home connected />
-  ) : (
+
+  const onSubmit = async (data) =>
+    onSubmitLogin(data, router, authState, dispatch);
+
+  return (
     <div className={styles.containerLogin}>
       <div className={styles.screen}>
         <div className={styles.formContent}>
@@ -179,5 +167,18 @@ function Login() {
     </div>
   );
 }
+
+export const getServerSideProps = wrapper.getServerSideProps(
+  (store) => async () => {
+    // we can set the initial state from here
+    // we are setting to false but you can run your custom logic here
+    await store.dispatch(setAuthState(false));
+    return {
+      props: {
+        authState: false,
+      },
+    };
+  }
+);
 
 export default Login;

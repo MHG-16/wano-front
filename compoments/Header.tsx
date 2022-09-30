@@ -1,9 +1,14 @@
 import React from "react";
 import Link from "next/link";
 import styles from "./Header.module.css";
+import { useDispatch, useSelector } from "react-redux";
+import { selectAuthState } from "../store/authSlice";
+import { onLogout } from "../service/login";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const Header = ({ connected }: any) => {
+const Header = () => {
+  const authState = useSelector(selectAuthState);
+  const dispatch = useDispatch();
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
@@ -17,13 +22,13 @@ const Header = ({ connected }: any) => {
           </a>
           <a href="#"> Registrati</a>
           <a href="#"> Servizio Wano</a>
-          {connected == false ? (
+          {!authState ? (
             <Link href="/login">
               <a href="#"> login</a>
             </Link>
           ) : (
             <Link href="/">
-              <a> Logout</a>
+              <a onClick={() => onLogout(authState, dispatch)}> Logout</a>
             </Link>
           )}
         </div>
