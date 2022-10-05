@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import styles from "./Header.module.css";
+import styles from "../styles/Header.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { selectAuthState } from "../store/authSlice";
 import { onLogout } from "../service/login";
@@ -23,9 +23,7 @@ const Header = () => {
           <a href="#"> Registrati</a>
           <a href="#"> Servizio Wano</a>
           {!authState ? (
-            <Link href="/login">
-              <a href="#"> login</a>
-            </Link>
+            <a onClick={() => (window.location.href = "/login")}>login</a>
           ) : (
             <Link href="/">
               <a onClick={() => onLogout(authState, dispatch)}> Logout</a>

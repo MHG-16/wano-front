@@ -1,11 +1,13 @@
 import { Action, configureStore, ThunkAction } from "@reduxjs/toolkit";
 import { createWrapper } from "next-redux-wrapper";
 import { authSlice } from "./authSlice";
+import { OpenState } from "./modalOpen";
 
 export const makeStore = () =>
   configureStore({
     reducer: {
       [authSlice.name]: authSlice.reducer,
+      [OpenState.name]: OpenState.reducer,
     },
     devTools: true,
   });
