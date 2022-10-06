@@ -7,6 +7,7 @@
   cursor: pointer;
   outline: none;
 }
+
 .logo .leftPartie {
   text-align: center;
   width: 50px;
@@ -18,6 +19,7 @@
   font-size: xx-large;
   border: 2.5px solid #0da1f7;
 }
+
 .logo .rightPartie {
   height: 50px;
   padding-right: 5px;
@@ -40,6 +42,7 @@
   background: rgba(15, 52, 96, 0.95);
   display: flex;
 }
+
 .header nav {
   margin-left: 0;
   padding-top: 45px;
@@ -47,45 +50,29 @@
   font-size: large;
   font-weight: bold;
 }
+
 .header nav .myLinks {
   display: flex;
   justify-content: space-around;
 }
+
 .header nav .myLinks a {
   margin-left: 10%;
   text-decoration: none;
   color: #bebebe;
   justify-content: space-around;
+  cursor: pointer;
 }
+
 .header nav .myLinks a:hover {
   color: white;
   text-shadow: 1px 1px #bebebe;
 }
+
 .header nav div .active {
   color: #e94560;
 }
 
-#icon-hamburger {
-  display: none;
-  position: absolute;
-  top: 40px;
-  right: 10px;
-  color: azure;
-  font-size: xx-large;
-  font-weight: bold;
-}
-
-@media screen and (max-width: 768px) {
-  #icon-hamburger {
-    display: block;
-    cursor: pointer;
-  }
-  #myLinks {
-    display: none;
-    width: 100%;
-    height: 100%;
-  }
-}
 .navBar {
   display: none;
   position: absolute;
@@ -98,20 +85,24 @@
   width: 50%;
   height: 100%;
 }
+
 .navBar ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
+
 .navBar ul li {
   margin-top: 30px;
 }
+
 .navBar a {
   margin: 0px 0 0 10px;
   text-decoration: none;
   color: #030303;
   justify-content: space-around;
 }
+
 .navBar a:hover {
   color: white;
 }
@@ -127,6 +118,54 @@
   font-weight: bolder;
   font-size: larger;
 }
+
 .btn-menu .icon-menu {
   margin-left: 10px;
-} /*# sourceMappingURL=header.css.map */
+}
+
+/*# sourceMappingURL=header.css.map */
+
+@media screen and (max-width: 768px) {
+  .header nav .myLinks {
+    display: flex;
+    width: 100%;
+    margin-right: 2%;
+  }
+
+  .header nav .myLinks a {
+    margin-left: 0px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .logo .rightPartie {
+    display: none;
+  }
+
+  .header nav .myLinks {
+    justify-content: space-around;
+  }
+
+  .header nav .myLinks a:last-child {
+    margin-right: 5px;
+  }
+
+  .header nav .myLinks a:first-child {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .header nav .myLinks {
+    font-size: smaller;
+  }
+}
+
+@media screen and (max-width: 265px) {
+  .header .logo .leftPartie {
+    width: 35px;
+    height: 35px;
+    margin: 0.3rem 0;
+    font-size: x-large;
+  }
+}

@@ -21,7 +21,7 @@ const Header = () => {
             Home
           </a>
           <a href="#"> Registrati</a>
-          <a href="#"> Servizio Wano</a>
+          <a href="#"> About</a>
           {!authState ? (
             <a onClick={() => (window.location.href = "/login")}>login</a>
           ) : (

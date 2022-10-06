@@ -7,13 +7,15 @@ import { selectOpenState, setOpenState } from "../store/modalOpen";
 import { wrapper } from "../store/store";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export default function Home({ products }: any) {
+export default function Home({ products, error }: any) {
   const openState = useSelector(selectOpenState);
-  return (
+  return !error ? (
     <>
       <HomePage products={products} />
       <Modal open={openState} />
     </>
+  ) : (
+    <div>Error</div>
   );
 }
 
@@ -22,12 +24,20 @@ export const getServerSideProps = wrapper.getServerSideProps(
     // we can set the initial state from here
     // we are setting to false but you can run your custom logic here
     await store.dispatch(setOpenState(false));
-    const req = await axios.get("http://localhost:5000/product/list");
-    const products = req.data.message.products;
+    const products = await axios
+      .get("http://localhost:5000/product/list")
+      .then((response) => {
+        return response.data.message.products;
+      })
+      .catch(() => {
+        console.log("Failed to get product list");
+        return null;
+      });
     return {
       props: {
         openState: false,
         products,
+        error: products === null,
       },
     };
   }

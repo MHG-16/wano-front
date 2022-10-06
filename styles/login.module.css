@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway:400,700");
+
 .containerLogin {
   display: flex;
   align-items: center;
@@ -246,6 +247,7 @@
     .btnSubIcon {
     margin-left: 1rem;
   }
+
   .containerLogin
     .screen
     .formContent
@@ -257,13 +259,16 @@
     margin-right: 0.3rem;
   }
 }
+
 @media screen and (min-width: 720px) {
   .containerLogin .screen {
     width: 50%;
   }
+
   .containerLogin .screen .formContent .login .FormField .input {
     font-size: large;
   }
+
   .containerLogin
     .screen
     .containerLogin
@@ -275,16 +280,22 @@
     .iconMedia {
     font-size: 1.2rem;
   }
+  .containerLogin .screen .formContent .forgetTxt {
+    display: grid;
+  }
 }
+
 @media screen and (max-width: 390px) {
   .containerLogin {
     width: 100%;
   }
+
   .containerLogin .screen {
     margin-right: 10px;
     margin-left: 10px;
-    width: 100%;
+    width: 90%;
   }
+
   .containerLogin
     .screen
     .formContent
@@ -295,16 +306,55 @@
     margin-right: 0.3rem;
     font-size: 1rem;
   }
+
   .containerLogin .screen .formContent .footerLogin .socialMedia {
     margin-right: 1rem;
   }
+
+  .containerLogin
+    .screen
+    .formContent
+    .login
+    .buttonSubmit
+    .btnSubmit
+    .btnSubIcon {
+    display: none;
+    border-style: none;
+  }
+
+  .containerLogin .screen .formContent .login .buttonSubmit {
+    width: 80%;
+  }
+  .screen__background__shape3 {
+    background: transparent;
+  }
 }
+
+@media screen and (max-width: 300px) {
+  .containerLogin .screen .formContent .login .FormField .input {
+    width: 70%;
+  }
+
+  .EyeIcon {
+    right: 32%;
+  }
+
+  .containerLogin .screen .formContent .footerLogin {
+    bottom: 1.8rem;
+  }
+
+  .containerLogin .screen {
+    height: auto;
+  }
+}
+
 @media screen and (max-width: 550px) {
   .containerLogin .screen {
     margin-right: 10px;
     margin-left: 10px;
     width: 90%;
   }
+
   .containerLogin
     .screen
     .formContent
@@ -315,8 +365,11 @@
     margin-right: 0.3rem;
     font-size: 1rem;
   }
+
   .containerLogin .screen .formContent .footerLogin .socialMedia {
     margin-right: 1rem;
   }
 }
-/*# sourceMappingURL=login.css.map */ /*# sourceMappingURL=login.css.map */
+
+/*# sourceMappingURL=login.css.map */
+/*# sourceMappingURL=login.css.map */
