@@ -7,7 +7,7 @@ import styles from "../styles/modal.module.css";
 export default function Modal({ open }: ModalProps) {
   const dispatch = useDispatch();
   const [total, setTotal] = useState(0);
-  return open !== 0 ? (
+  return open ? (
     <div className={styles.modalOverlay}>
       <div className={styles.modalHeader}>
         <span className={styles.title}>Add to cart</span>
@@ -15,7 +15,7 @@ export default function Modal({ open }: ModalProps) {
           className={styles.closeButton}
           onClick={() => {
             setTotal(0);
-            dispatch(setOpenState(0));
+            dispatch(setOpenState(null));
           }}
         >
           X
@@ -33,10 +33,10 @@ export default function Modal({ open }: ModalProps) {
                 defaultValue="0"
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                   console.log(open);
-                  setTotal(e.target.valueAsNumber * open);
+                  setTotal(e.target.valueAsNumber * open.price);
                 }}
               />
-              <QuantityNav update={setTotal} price={open} />
+              <QuantityNav update={setTotal} price={open.price} />
             </span>
           </span>
         </div>
@@ -49,7 +49,7 @@ export default function Modal({ open }: ModalProps) {
         <button
           onClick={() => {
             setTotal(0);
-            dispatch(setOpenState(0));
+            dispatch(setOpenState(null));
           }}
         >
           Cancel
@@ -60,5 +60,9 @@ export default function Modal({ open }: ModalProps) {
 }
 
 interface ModalProps {
-  open: number;
+  open: {
+    name: string;
+    quantity: number;
+    price: number;
+  } | null;
 }

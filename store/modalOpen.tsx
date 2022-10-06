@@ -2,12 +2,16 @@ import { createSlice } from "@reduxjs/toolkit";
 import { AppState } from "./store";
 
 export interface ModalOpenState {
-  openState: number;
+  openState: {
+    name: string;
+    quantity: number;
+    price: number;
+  } | null;
 }
 
 // initial State
 const initialState: ModalOpenState = {
-  openState: 0,
+  openState: null,
 };
 
 export const OpenState = createSlice({

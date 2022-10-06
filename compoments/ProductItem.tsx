@@ -26,7 +26,15 @@ export default function ProductItem({ product }: any) {
           <div className={styles.btn_container}>
             <a
               href="#"
-              onClick={() => dispatch(setOpenState(product.price as number))}
+              onClick={() =>
+                dispatch(
+                  setOpenState({
+                    name: product.name,
+                    quantity: product.quantity,
+                    price: product.price,
+                  })
+                )
+              }
             >
               <button>
                 <label className={styles.txt_content}>Add to cart</label>
