@@ -1,18 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import QuantityNav from "../pages/QunatityNav";
+import QuantityNav from "./QunatityNav";
 import { setOpenState } from "../store/modalOpen";
 import styles from "../styles/modal.module.css";
 
 export default function Modal({ open }: ModalProps) {
   const dispatch = useDispatch();
-  return open ? (
+  const [total, setTotal] = useState(0);
+  return open !== 0 ? (
     <div className={styles.modalOverlay}>
       <div className={styles.modalHeader}>
         <span className={styles.title}>Add to cart</span>
         <button
           className={styles.closeButton}
-          onClick={() => dispatch(setOpenState(false))}
+          onClick={() => {
+            setTotal(0);
+            dispatch(setOpenState(0));
+          }}
         >
           X
         </button>
@@ -27,23 +31,34 @@ export default function Modal({ open }: ModalProps) {
                 id="quantity-input"
                 min={0}
                 defaultValue="0"
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                  console.log(open);
+                  setTotal(e.target.valueAsNumber * open);
+                }}
               />
-              <QuantityNav />
+              <QuantityNav update={setTotal} price={open} />
             </span>
           </span>
         </div>
         <div className={styles.totalPrice}>
-          <label>Price : 110</label>
+          <label>Price : {total}</label>
         </div>
       </div>
       <div className={styles.modalFooter}>
         <button>Buy</button>
-        <button>Cancel</button>
+        <button
+          onClick={() => {
+            setTotal(0);
+            dispatch(setOpenState(0));
+          }}
+        >
+          Cancel
+        </button>
       </div>
     </div>
   ) : null;
 }
 
 interface ModalProps {
-  open: boolean;
+  open: number;
 }

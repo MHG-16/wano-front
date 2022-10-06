@@ -2,12 +2,12 @@ import { createSlice } from "@reduxjs/toolkit";
 import { AppState } from "./store";
 
 export interface ModalOpenState {
-  openState: boolean;
+  openState: number;
 }
 
 // initial State
 const initialState: ModalOpenState = {
-  openState: false,
+  openState: 0,
 };
 
 export const OpenState = createSlice({

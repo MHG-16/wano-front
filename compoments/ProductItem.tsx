@@ -24,7 +24,10 @@ export default function ProductItem({ product }: any) {
         </span>
         <div className={styles.btn_group}>
           <div className={styles.btn_container}>
-            <a href="#" onClick={() => dispatch(setOpenState(true))}>
+            <a
+              href="#"
+              onClick={() => dispatch(setOpenState(product.price as number))}
+            >
               <button>
                 <label className={styles.txt_content}>Add to cart</label>
                 <FontAwesomeIcon icon={faCartPlus} className={styles.icon} />
