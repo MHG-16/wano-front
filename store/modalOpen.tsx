@@ -4,7 +4,6 @@ import { AppState } from "./store";
 export interface ModalOpenState {
   openState: {
     name: string;
-    quantity: number;
     price: number;
   } | null;
 }

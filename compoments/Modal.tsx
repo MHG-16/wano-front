@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import QuantityNav from "./QunatityNav";
 import { setOpenState } from "../store/modalOpen";
 import styles from "../styles/modal.module.css";
+import { ModalProps, save } from "../utils/modal";
 
 export default function Modal({ open }: ModalProps) {
   const dispatch = useDispatch();
@@ -45,7 +46,14 @@ export default function Modal({ open }: ModalProps) {
         </div>
       </div>
       <div className={styles.modalFooter}>
-        <button>Buy</button>
+        <button
+          onClick={() => {
+            setTotal(0);
+            save(open, dispatch);
+          }}
+        >
+          Buy
+        </button>
         <button
           onClick={() => {
             setTotal(0);
@@ -57,12 +65,4 @@ export default function Modal({ open }: ModalProps) {
       </div>
     </div>
   ) : null;
-}
-
-interface ModalProps {
-  open: {
-    name: string;
-    quantity: number;
-    price: number;
-  } | null;
 }

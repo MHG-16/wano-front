@@ -30,7 +30,6 @@ export default function ProductItem({ product }: any) {
                 dispatch(
                   setOpenState({
                     name: product.name,
-                    quantity: product.quantity,
                     price: product.price,
                   })
                 )
