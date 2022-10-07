@@ -20,9 +20,7 @@ export const PanierState = createSlice({
   reducers: {
     // Action to set the authentication status
     setPanierState(state, action) {
-      state.panierState = state.panierState
-        ? [action.payload]
-        : [...state.panierState, action.payload];
+      state.panierState = [...state.panierState, action.payload];
     },
   },
 });
