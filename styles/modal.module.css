@@ -34,44 +34,12 @@
   background-color: aliceblue;
   color: #2faee0;
 }
-.modalOverlay .modalContent {
-  margin: 2% 0;
-}
-.modalOverlay .modalContent span {
-  float: left;
-  display: flex;
-  align-items: center;
-  /* Chrome, Safari, Edge, Opera */
-  /* Firefox */
-}
-.modalOverlay .modalContent span label {
-  margin-right: 2%;
-  font-size: larger;
-  font-weight: bolder;
-}
-.modalOverlay .modalContent span input::-webkit-outer-spin-button,
-.modalOverlay .modalContent span input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-.modalOverlay .modalContent span input[type="number"] {
-  -moz-appearance: textfield;
-  width: 50px;
-  height: 50px;
-  font-size: larger;
-  text-align: center;
-}
-.modalOverlay .modalContent .totalPrice {
-  float: inline-end;
-  font-size: large;
-  font-weight: bold;
-  margin-right: 10%;
-}
-.modalOverlay .modalFooter {
+
+.modalFooter {
   margin: 2% 0;
   display: flex;
 }
-.modalOverlay .modalFooter button {
+.modalFooter button {
   padding: 10px 20px;
   font-size: large;
   font-weight: 600;
@@ -80,12 +48,12 @@
   margin-right: 5%;
   cursor: pointer;
 }
-.modalOverlay .modalFooter button:first-child {
+.modalFooter button:first-child {
   background-color: #90b8f8;
   padding: 10px 30px;
   color: #16213e;
 }
-.modalOverlay .modalFooter button:last-child {
+.modalFooter button:last-child {
   background-color: tomato;
   padding: 10px 20px;
   color: aliceblue;

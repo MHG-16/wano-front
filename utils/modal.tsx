@@ -8,6 +8,8 @@ export interface ModalProps {
     name: string;
     price: number;
   } | null;
+  title: string;
+  buttonFooterTxt: string;
 }
 
 interface dataType {

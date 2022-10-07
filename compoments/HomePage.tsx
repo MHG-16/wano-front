@@ -5,6 +5,7 @@ import Head from "next/head";
 import Header from "./Header";
 import ListItem from "./ListItem";
 import style from "../styles/home.module.css";
+import MonPanier from "./MonPanier";
 
 export default function HomePage({ products }: any) {
   return (
@@ -19,7 +20,7 @@ export default function HomePage({ products }: any) {
         <div className={style.container}>
           <ListItem products={products} />
         </div>
-        {/*<MonPanier />*/}
+        <MonPanier />
       </main>
     </>
   );

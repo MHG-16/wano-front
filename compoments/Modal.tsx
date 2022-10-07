@@ -1,27 +1,23 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
+import { Dispatch } from "@reduxjs/toolkit";
+
 import QuantityNav from "./QunatityNav";
 import { setOpenState } from "../store/modalOpen";
-import styles from "../styles/modal.module.css";
+import styles from "../styles/modalAddContent.module.css";
 import { ModalProps, save } from "../utils/modal";
+import ModalLayout from "./ModalLayout";
 
-export default function Modal({ open }: ModalProps) {
+export default function Modal({ open, title, buttonFooterTxt }: ModalProps) {
   const dispatch = useDispatch();
   const [total, setTotal] = useState(0);
-  return open ? (
-    <div className={styles.modalOverlay}>
-      <div className={styles.modalHeader}>
-        <span className={styles.title}>Add to cart</span>
-        <button
-          className={styles.closeButton}
-          onClick={() => {
-            setTotal(0);
-            dispatch(setOpenState(null));
-          }}
-        >
-          X
-        </button>
-      </div>
+  return open && typeof open === "object" ? (
+    <ModalLayout
+      title={title}
+      buttonFooterTxt={buttonFooterTxt}
+      onClose={() => onClose(dispatch, setTotal)}
+      onCloseSave={() => onCloseSave(open, setTotal, dispatch)}
+    >
       <div className={styles.modalContent}>
         <div className={styles.modalField}>
           <span>
@@ -45,24 +41,23 @@ export default function Modal({ open }: ModalProps) {
           <label>Price : {total}</label>
         </div>
       </div>
-      <div className={styles.modalFooter}>
-        <button
-          onClick={() => {
-            setTotal(0);
-            save(open, dispatch);
-          }}
-        >
-          Buy
-        </button>
-        <button
-          onClick={() => {
-            setTotal(0);
-            dispatch(setOpenState(null));
-          }}
-        >
-          Cancel
-        </button>
-      </div>
-    </div>
+    </ModalLayout>
   ) : null;
+}
+
+function onClose(
+  dispatch: Dispatch,
+  setTotal: React.Dispatch<React.SetStateAction<number>>
+) {
+  setTotal(0);
+  dispatch(setOpenState(null));
+}
+
+function onCloseSave(
+  open: { name: string; price: number },
+  setTotal: React.Dispatch<React.SetStateAction<number>>,
+  dispatch: Dispatch
+) {
+  setTotal(0);
+  save(open, dispatch);
 }

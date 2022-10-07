@@ -1,6 +1,7 @@
 import axios from "axios";
 import React from "react";
 import { useSelector } from "react-redux";
+import ModalPanier from "../compoments/addCart";
 
 import HomePage from "../compoments/HomePage";
 import Modal from "../compoments/Modal";
@@ -13,7 +14,8 @@ export default function Home({ products, error }: any) {
   return !error ? (
     <>
       <HomePage products={products} />
-      <Modal open={openState} />
+      <Modal open={openState} title="Add to cart" buttonFooterTxt="buy" />
+      <ModalPanier open={openState} title={""} buttonFooterTxt={""} />
     </>
   ) : (
     <div>Error</div>

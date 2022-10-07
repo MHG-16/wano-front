@@ -1,11 +1,14 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { createSlice } from "@reduxjs/toolkit";
 import { AppState } from "./store";
 
 export interface ModalOpenState {
-  openState: {
-    name: string;
-    price: number;
-  } | null;
+  openState:
+    | {
+        name: string;
+        price: number;
+      }
+    | any;
 }
 
 // initial State

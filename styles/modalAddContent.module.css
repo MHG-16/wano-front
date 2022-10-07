@@ -1,0 +1,33 @@
+.modalContent {
+  margin: 2% 0;
+}
+.modalContent span {
+  float: left;
+  display: flex;
+  align-items: center;
+  /* Chrome, Safari, Edge, Opera */
+  /* Firefox */
+}
+.modalContent span label {
+  margin-right: 2%;
+  font-size: larger;
+  font-weight: bolder;
+}
+.modalContent span input::-webkit-outer-spin-button,
+.modalContent span input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.modalContent span input[type="number"] {
+  -moz-appearance: textfield;
+  width: 50px;
+  height: 50px;
+  font-size: larger;
+  text-align: center;
+}
+.modalContent .totalPrice {
+  float: inline-end;
+  font-size: large;
+  font-weight: bold;
+  margin-right: 10%;
+} /*# sourceMappingURL=modalAddContent.module.css.map */
