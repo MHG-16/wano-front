@@ -8,6 +8,7 @@
   width: 50%;
   font-family: "Raleway", sans-serif;
   display: grid;
+  border: 2px solid #c3c3c3;
 }
 .modalOverlay .modalHeader {
   border-bottom: 4px solid #c3c3c3;

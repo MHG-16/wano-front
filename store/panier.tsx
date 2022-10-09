@@ -22,10 +22,13 @@ export const PanierState = createSlice({
     setPanierState(state, action) {
       state.panierState = [...state.panierState, action.payload];
     },
+    updatePanierState(state, action) {
+      state.panierState = [...action.payload];
+    },
   },
 });
 
-export const { setPanierState } = PanierState.actions;
+export const { setPanierState, updatePanierState } = PanierState.actions;
 
 export const selectPanierState = (state: AppState) => state.panier.panierState;
 
