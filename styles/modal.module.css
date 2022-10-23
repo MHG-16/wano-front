@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,700");
+.modalOverlay {
+  position: fixed;
+  top: 150px;
+  left: 25%;
+  padding: 20px;
+  background-color: #16213e;
+  width: 50%;
+  font-family: "Raleway", sans-serif;
+  display: grid;
+  border: 2px solid #c3c3c3;
+}
+.modalOverlay .modalHeader {
+  border-bottom: 4px solid #c3c3c3;
+  padding-bottom: 15px;
+}
+.modalOverlay .modalHeader .title {
+  font-size: larger;
+  font-weight: bold;
+}
+.modalOverlay .modalHeader button {
+  border: none;
+  float: right;
+  background-color: tomato;
+  color: aliceblue;
+  font-weight: bold;
+  border-radius: 2px;
+  font-size: larger;
+  border-radius: 20%;
+  padding: 5px 10px;
+  cursor: pointer;
+  box-shadow: 10px 10px 30px 0px rgba(247, 149, 29, 0.5);
+}
+.modalOverlay .modalHeader button:hover {
+  background-color: aliceblue;
+  color: #2faee0;
+}
+
+.modalFooter {
+  margin: 2% 0;
+  display: flex;
+}
+.modalFooter button {
+  padding: 10px 20px;
+  font-size: large;
+  font-weight: 600;
+  border-style: none;
+  border-radius: 10%;
+  margin-right: 5%;
+  cursor: pointer;
+}
+.modalFooter button:first-child {
+  background-color: #90b8f8;
+  padding: 10px 30px;
+  color: #16213e;
+}
+.modalFooter button:last-child {
+  background-color: tomato;
+  padding: 10px 20px;
+  color: aliceblue;
+} /*# sourceMappingURL=modal.module.css.map */

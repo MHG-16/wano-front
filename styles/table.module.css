@@ -1,0 +1,102 @@
+.tableOfProducts {
+  font-family: "Poppins", Arial, sans-serif;
+  width: 100%;
+  border-spacing: 0 10px;
+  box-shadow: 6px 4px 6px 4px #5c5696;
+  -webkit-box-shadow: 9px 8px 9px -1px #5c5696;
+  -moz-box-shadow: 6px 4px 6px 4px #5c5696;
+}
+.tableOfProducts thead {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  background: rgba(15, 52, 96, 0.95);
+}
+.tableOfProducts thead tr th {
+  padding: 10px;
+  color: #f3f3f3;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+.tableOfProducts tbody tr {
+  box-shadow: 0px 5px 12px -12px rgba(0, 0, 0, 0.29);
+  text-align: center;
+  background-color: #dee3ed;
+  color: #343a40;
+}
+.tableOfProducts tbody tr:nth-child(2n) {
+  background-color: rgba(15, 52, 96, 0.95);
+  color: #e2e8f0;
+}
+.tableOfProducts tbody tr td {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-transform: capitalize;
+  font-weight: bolder;
+}
+.tableOfProducts tbody tr td .saveButton,
+.tableOfProducts tbody tr td .cancelButton {
+  display: none;
+}
+.tableOfProducts tbody tr td button {
+  border: 1px solid #dc3545;
+  width: 30px;
+  height: 30px;
+  background-color: #f3f3f3;
+  font-weight: bold;
+  font-size: larger;
+  border-radius: 50%;
+  color: #dc3545;
+  margin-right: 5px;
+  text-align: center;
+}
+.tableOfProducts tbody tr td button:first-child,
+.tableOfProducts tbody tr td button:nth-child(2) {
+  color: green;
+  border-color: green;
+  font-size: large;
+}
+.tableOfProducts tbody tr td button:first-child:hover,
+.tableOfProducts tbody tr td button:nth-child(2):hover {
+  background-color: #c6f6d5;
+  transform: scale(110%);
+}
+.tableOfProducts tbody tr td button:last-child:hover {
+  background-color: #fed7e2;
+  transform: scale(110%);
+  -webkit-animation: all 0.7s ease-in-out;
+  animation: all 0.7s ease-in-out;
+}
+.tableOfProducts tfoot td {
+  text-align: center;
+  font-weight: bold;
+}
+
+.productField .disabled {
+  -moz-appearance: textfield;
+  background-color: #343a40;
+  border-style: none;
+  padding-top: inherit;
+  padding-bottom: inherit;
+  text-transform: inherit;
+  font-weight: inherit;
+  text-align: center;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+}
+
+.inputEnabled {
+  -moz-appearance: textfield;
+  border-style: none;
+  border-bottom: #aaa solid 2px;
+  background-color: transparent;
+  outline: none;
+}
+
+.productField input::-webkit-outer-spin-button,
+.productField input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+} /*# sourceMappingURL=table.module.css.map */
