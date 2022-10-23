@@ -1,0 +1,56 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 4em;
+  align-items: center;
+  font-family: "Roboto", "Helvetica Neue", sans-serif;
+}
+.container button {
+  padding: 16px;
+  border-radius: 1em;
+  font-size: larger;
+  font-weight: bolder;
+  cursor: pointer;
+  background-color: tomato;
+  margin-top: 1em;
+}
+.container button:hover {
+  background-color: red;
+  transform: scale(110%);
+  -webkit-animation: all 0.4s ease-in-out;
+  animation: all 0.4s ease-in-out;
+}
+
+.numero {
+  font-size: 8em;
+}
+
+.eye {
+  background: #fff;
+  border-radius: 50%;
+  display: inline-block;
+  height: 100px;
+  position: relative;
+  width: 100px;
+  margin-right: 8px;
+}
+.eye::after {
+  background: #000;
+  border-radius: 50%;
+  bottom: 56.1px;
+  content: " ";
+  height: 33px;
+  position: absolute;
+  right: 33px;
+  width: 33px;
+}
+
+.codeHttp {
+  display: flex;
+}
+
+.screen {
+  width: 100%;
+  height: 100%;
+} /*# sourceMappingURL=500.module.css.map */
