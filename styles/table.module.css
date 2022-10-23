@@ -77,10 +77,9 @@
   -moz-appearance: textfield;
   background-color: #343a40;
   border-style: none;
-  padding-top: inherit;
-  padding-bottom: inherit;
-  text-transform: inherit;
-  font-weight: inherit;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  font-weight: bold;
   text-align: center;
   width: -webkit-min-content;
   width: -moz-min-content;
