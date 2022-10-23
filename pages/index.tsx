@@ -5,6 +5,7 @@ import ModalPanier from "../compoments/addCart";
 
 import HomePage from "../compoments/HomePage";
 import Modal from "../compoments/Modal";
+import Page500 from "../customPageError/page500";
 import { selectOpenState } from "../store/modalOpen";
 import { wrapper } from "../store/store";
 
@@ -18,7 +19,7 @@ export default function Home({ products, error }: any) {
       <ModalPanier open={openState} title={""} buttonFooterTxt={""} />
     </>
   ) : (
-    <div>Error</div>
+    <Page500 />
   );
 }
 

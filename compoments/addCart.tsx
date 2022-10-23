@@ -9,7 +9,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 import { ModalProps } from "../utils/modal";
-import { ProductItemType, ProductTableType } from "./types/monPanier";
+import { ProductItemType, ProductTableType } from "../types/monPanier";
 
 import { save } from "../utils/modal";
 import { setOpenState } from "../store/modalOpen";

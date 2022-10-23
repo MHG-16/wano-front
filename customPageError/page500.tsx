@@ -1,7 +1,10 @@
+import { useRouter } from "next/router";
 import React from "react";
+
 import styles from "../styles/500.module.css";
 
-export default function page500() {
+export default function Page500() {
+  const router = useRouter();
   return (
     <div className={styles.screen} onMouseMove={(e) => moveEyes(e)}>
       <div className={styles.container}>
@@ -16,7 +19,7 @@ export default function page500() {
           Sorry! Echec to connected to server.{" "}
           <i> We{"'"} re looking to see what happened.</i>
         </p>
-        <button>Refresch this page</button>
+        <button onClick={() => router.reload()}>Refresch this page</button>
       </div>
     </div>
   );
