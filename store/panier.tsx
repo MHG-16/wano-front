@@ -29,7 +29,6 @@ export const PanierState = createSlice({
 });
 
 export const { setPanierState, updatePanierState } = PanierState.actions;
-
 export const selectPanierState = (state: AppState) => state.panier.panierState;
 
 export default PanierState.reducer;
