@@ -9,12 +9,10 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 import { ModalProps } from "../utils/modal";
-import { ProductItemType, ProductTableType } from "./types/monPanier";
-
-import { save } from "../utils/modal";
+import { ProductItemType, ProductTableType } from "../types/monPanier";
 import { setOpenState } from "../store/modalOpen";
 import ModalLayout from "./ModalLayout";
-import { selectPanierState } from "../store/panier";
+import { selectPanierState, updatePanierState } from "../store/panier";
 import styles from "../styles/table.module.css";
 import {
   cancelButtonClicked,
@@ -30,13 +28,14 @@ export default function ModalPanier({ open }: ModalProps) {
     name: string;
     price: number;
     quantity: number;
+    id_product: string;
   }[];
   return open && typeof open === "number" ? (
     <ModalLayout
       title="My chart"
       buttonFooterTxt="save without view novoice"
       onClose={() => dispatch(setOpenState(null))}
-      onCloseSave={() => save(open, dispatch)}
+      onCloseSave={() => console.log(products)}
     >
       <div>
         <TableOfProducts products={products} />
@@ -60,7 +59,12 @@ function TableOfProducts({ products }: ProductTableType) {
       <tbody>
         {products.map(
           (
-            product: { name: string; price: number; quantity: number },
+            product: {
+              name: string;
+              price: number;
+              quantity: number;
+              id_product: string;
+            },
             index: number
           ) => (
             <ProductItem
@@ -72,10 +76,12 @@ function TableOfProducts({ products }: ProductTableType) {
         )}
       </tbody>
       <tfoot>
-        <td colSpan={2}>Total price</td>
-        <td id="Total">
-          {products.reduce((a, b) => a + b.quantity * b.price, 0)}
-        </td>
+        <tr>
+          <td colSpan={2}>Total price</td>
+          <td colSpan={2} id="Total">
+            {products.reduce((a, b) => a + b.quantity * b.price, 0)}
+          </td>
+        </tr>
       </tfoot>
     </table>
   );
@@ -84,6 +90,7 @@ function TableOfProducts({ products }: ProductTableType) {
 function ProductItem({ product, index }: ProductItemType) {
   const [isEnabled, setEnabled] = useState(true);
   const [oldItem, setPrice] = useState({ price: 0, quantity: 0 });
+  const dispatch = useDispatch();
 
   return (
     <tr className={"product-container"} id={"line " + index}>
@@ -119,7 +126,10 @@ function ProductItem({ product, index }: ProductItemType) {
         <button
           className={styles.saveButton}
           id={"saveButton" + index}
-          onClick={() => saveButtonClicked(setEnabled, index)}
+          onClick={() => {
+            dispatch(updatePanierState(index));
+            saveButtonClicked(setEnabled, index);
+          }}
         >
           <FontAwesomeIcon icon={faSave} className={styles.icon} />
         </button>

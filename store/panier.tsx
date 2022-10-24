@@ -6,6 +6,7 @@ export interface PanierState {
     name: string;
     quantity: number;
     price: number;
+    id_product: string;
   }[];
 }
 
@@ -23,7 +24,14 @@ export const PanierState = createSlice({
       state.panierState = [...state.panierState, action.payload];
     },
     updatePanierState(state, action) {
-      state.panierState = [...action.payload];
+      const quantityInputElement = document.getElementById(
+        "quantityOfProduct" + action.payload
+      ) as HTMLInputElement;
+      state.panierState = state.panierState.map((item, index) =>
+        action.payload === index
+          ? { ...item, quantity: quantityInputElement.valueAsNumber }
+          : item
+      );
     },
   },
 });

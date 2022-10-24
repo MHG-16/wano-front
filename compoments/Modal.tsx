@@ -54,7 +54,7 @@ function onClose(
 }
 
 function onCloseSave(
-  open: { name: string; price: number },
+  open: { name: string; price: number; id_product: string },
   setTotal: React.Dispatch<React.SetStateAction<number>>,
   dispatch: Dispatch
 ) {

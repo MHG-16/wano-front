@@ -7,6 +7,7 @@ export interface ModalProps {
   open: {
     name: string;
     price: number;
+    id_product: string;
   } | null;
   title: string;
   buttonFooterTxt: string;
@@ -15,6 +16,7 @@ export interface ModalProps {
 interface dataType {
   name: string;
   price: number;
+  id_product: string;
 }
 
 export function save(data: dataType, dispatch: Dispatch) {
@@ -22,7 +24,9 @@ export function save(data: dataType, dispatch: Dispatch) {
     "quantity-input"
   ) as HTMLInputElement;
   const quantity = QuantityInput.valueAsNumber;
+  console.log(data);
   const dataSaved = {
+    id_product: data.id_product,
     name: data.name,
     quantity: quantity,
     price: data.price,

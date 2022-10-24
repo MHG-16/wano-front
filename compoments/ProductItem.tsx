@@ -31,6 +31,7 @@ export default function ProductItem({ product }: any) {
                   setOpenState({
                     name: product.name,
                     price: product.price,
+                    id_product: product.id,
                   })
                 )
               }

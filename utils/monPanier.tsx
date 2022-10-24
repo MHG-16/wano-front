@@ -1,4 +1,4 @@
-import { StatePropsType } from "../compoments/types/monPanier";
+import { StatePropsType } from "../types/monPanier";
 
 export function editButtonClicked(
   setEnabled: React.Dispatch<React.SetStateAction<boolean>>,

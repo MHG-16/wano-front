@@ -7,6 +7,7 @@ export interface ModalOpenState {
     | {
         name: string;
         price: number;
+        id_product: string;
       }
     | any;
 }
